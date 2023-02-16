@@ -1,0 +1,33 @@
+resources:
+  - name: target-branch
+    type: git
+    source:
+      uri: git@comet.zra.org.zm:ipm/zra-web-services.git
+      branch: ((branch))
+      private_key: ((private_key))
+jobs:
+  - name: build
+    plan:
+      - get: target-branch
+      - task: build
+        config:
+          platform: linux
+          caches:
+            - path: $HOME/.m2/repository
+          image_resource:
+            type: registry-image
+            source:
+              repository: maven
+              tag: 3.6.3-jdk-8
+          inputs:
+            - name: target-branch
+          run:
+            path: sh
+            args:
+              - -cx
+              - |
+                mvn --version
+                java -version
+                javac -version
+                ls -la .
+                echo $HOME
