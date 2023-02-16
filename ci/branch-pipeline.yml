@@ -2,7 +2,7 @@ resources:
   - name: target-branch
     type: git
     source:
-      uri: git@comet.zra.org.zm:ipm/zra-web-services.git
+      uri: ((repo_uri))
       branch: ((branch))
       private_key: ((private_key))
 jobs:
