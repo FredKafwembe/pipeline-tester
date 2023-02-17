@@ -13,7 +13,7 @@ jobs:
         config:
           platform: linux
           caches:
-            - path: $HOME/.m2/repository
+            - path: ~/.m2/repository
           image_resource:
             type: registry-image
             source:
@@ -26,9 +26,8 @@ jobs:
             args:
               - -cx
               - |
-                mvn --version
-                java -version
-                javac -version
+                ls -la ~
                 ls -la .
-                echo $HOME
-                cd ./target-branch && mvn clean install
+                cd target-branch
+                ls -la .
+                mvn clean install
