@@ -9,6 +9,7 @@ jobs:
   - name: build
     plan:
       - get: target-branch
+        trigger: true
       - task: build
         config:
           platform: linux
