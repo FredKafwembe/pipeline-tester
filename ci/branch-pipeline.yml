@@ -31,3 +31,4 @@ jobs:
                 javac -version
                 ls -la .
                 echo $HOME
+                cd ./target-branch && mvn clean install
