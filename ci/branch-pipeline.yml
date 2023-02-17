@@ -19,7 +19,7 @@ jobs:
             type: registry-image
             source:
               repository: maven
-              tag: 3.6.3-jdk-8
+              tag: 3.8.5-openjdk-17
           inputs:
             - name: target-branch
           run:
@@ -27,8 +27,6 @@ jobs:
             args:
               - -cx
               - |
-                ls -la ~
-                ls -la .
                 cd target-branch
-                ls -la .
                 mvn clean install
+                ls -la ~
