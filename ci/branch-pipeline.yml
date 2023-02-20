@@ -27,7 +27,8 @@ jobs:
             args:
               - -cx
               - |
-                ls -la .m2/repository
+                ls -la /root/.m2/repository
+                ls -la ~/.m2/repository
                 cd target-branch
                 mvn clean install
                 ls -la /root/.m2/repository
