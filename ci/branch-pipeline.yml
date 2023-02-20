@@ -30,4 +30,4 @@ jobs:
                 ls -la
                 cd target-branch
                 mvn clean install
-                ls -la ../.m2
+                ls -la ../.m2/repository
