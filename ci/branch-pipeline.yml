@@ -14,7 +14,7 @@ jobs:
         config:
           platform: linux
           caches:
-            - path: /root/.m2/repository
+            - path: ~/.m2/repository
           image_resource:
             type: registry-image
             source:
@@ -27,8 +27,7 @@ jobs:
             args:
               - -cx
               - |
-                ls -la /root/.m2/repository
                 ls -la ~/.m2/repository
                 cd target-branch
                 mvn clean install
-                ls -la /root/.m2/repository
+                ls -la ~/.m2/repository
